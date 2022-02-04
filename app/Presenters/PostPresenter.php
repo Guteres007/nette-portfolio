@@ -10,16 +10,16 @@ use Nette\Application\UI\Presenter;
 
 class PostPresenter extends \Nette\Application\UI\Presenter
 {
-    private $entityManager;
-    public function __construct(EntityManager $entityManager)
-    {
-        Presenter::__construct();
-        $this->entityManager = $entityManager;
-    }
+    /**
+     * @inject
+     * @var \Nettrine\ORM\EntityManagerDecorator
+     */
+    public $entityManager;
+
 
     public function renderShow( )
     {
-      $this->entityManager->find(Post::class,1);
+      dump($this->entityManager->getRepository(Post::class)->findAll());
 
     }
 
