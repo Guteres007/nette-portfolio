@@ -24,9 +24,14 @@ class Post
     private string $title;
 
     /**
-     * @ORM\Column(type="string", unique=true, nullable=false)
+     * @ORM\Column(type="string", nullable=false)
      */
     private string $description;
+
+    /**
+     * @ORM\Column(type="string", nullable=false)
+     */
+    private $author;
 
     /**
      * @return string
