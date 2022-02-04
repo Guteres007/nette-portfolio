@@ -11,16 +11,22 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
+    /**
+     * @ORM\Id
+     * @ORM\GeneratedValue
+     * @ORM\Column(type="integer")
+     */
+    private $id;
 
     /**
      * @ORM\Column(type="string", unique=true, nullable=false)
      */
-    protected string $title;
+    private string $title;
 
     /**
      * @ORM\Column(type="string", unique=true, nullable=false)
      */
-    protected string $description;
+    private string $description;
 
     /**
      * @return string
