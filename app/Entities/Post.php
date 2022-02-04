@@ -2,6 +2,7 @@
 
 
 namespace App\Entities;
+use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
 
 
@@ -11,6 +12,8 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
+
+
     /**
      * @ORM\Id
      * @ORM\GeneratedValue
@@ -32,6 +35,16 @@ class Post
      * @ORM\Column(type="string", nullable=true)
      */
     private $author;
+
+    /**
+     * @ORM\OneToMany(targetEntity=Label::class, mappedBy="post", cascade={"persist", "remove"})
+     */
+    private $labels;
+
+    public function __construct()
+    {
+        $this->labels = new ArrayCollection();
+    }
 
     /**
      * @return string
@@ -87,6 +100,28 @@ class Post
     public function setAuthor($author): void
     {
         $this->author = $author;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getLabels()
+    {
+        return $this->labels;
+    }
+
+    /**
+     * @param Label $label
+     * @return $this
+     */
+    public function addLabel(Label $label): self
+    {
+        if (!$this->labels->contains($label)) {
+            $this->labels[] = $label;
+            $label->setPost($this);
+        }
+
+        return $this;
     }
 
 }

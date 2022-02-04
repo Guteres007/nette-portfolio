@@ -4,6 +4,7 @@
 namespace App\Presenters;
 
 
+use App\Entities\Label;
 use App\Entities\Post;
 use Doctrine\ORM\EntityManager;
 use Nette\Application\UI\Form;
@@ -46,6 +47,9 @@ class PostPresenter extends \Nette\Application\UI\Presenter
         $post->setTitle($data->title);
         $post->setDescription($data->description);
         $post->setAuthor('Tonda Omáčka');
+        $label = new Label();
+        $label->setText('label text'. random_int(1, 2002));
+        $post->addLabel($label);
         $this->entityManager->persist($post);
         $this->entityManager->flush();
 

@@ -5,6 +5,9 @@
             {$post->getId()}
             {$post->getTitle()}
             {$post->getDescription()}
+            {foreach $post->getLabels() as $label}
+                <span style="background: red">{$label->getText()}</span>
+            {/foreach}
         </li>
     </ul>
 
