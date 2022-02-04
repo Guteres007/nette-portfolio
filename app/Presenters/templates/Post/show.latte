@@ -1,3 +1,11 @@
 {block content}
-    Post
+
+    <ul>
+        <li n:foreach="$posts as $post">
+            {$post->getId()}
+            {$post->getTitle()}
+            {$post->getDescription()}
+        </li>
+    </ul>
+
 {/block}
