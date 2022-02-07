@@ -8,6 +8,7 @@
             {foreach $post->getLabels() as $label}
                 <span style="background: red">{$label->getText()}</span>
             {/foreach}
+            <a href="{link Post:edit $post->getId()}">Edit</a>
         </li>
     </ul>
 

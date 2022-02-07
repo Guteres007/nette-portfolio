@@ -9,6 +9,7 @@ use App\Entities\Post;
 use Doctrine\ORM\EntityManager;
 use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
+use Nette\Http\Request;
 
 class PostPresenter extends \Nette\Application\UI\Presenter
 {
@@ -18,42 +19,71 @@ class PostPresenter extends \Nette\Application\UI\Presenter
      */
     public $entityManager;
 
+    private $post;
 
-    public function renderShow( )
+    public function renderShow()
     {
-      $this->template->posts = $this->entityManager->getRepository(Post::class)->findAll();
+        $this->template->posts = $this->entityManager->getRepository(Post::class)->findAll();
     }
 
-    public function renderCreate() {
+    public function renderEdit($id)
+    {
+        $post = $this->entityManager->getRepository(Post::class)->find($id);
+
+        if (!$post) {
+            return $this->redirect('Homepage:');
+        }
+        $this->getComponent('postForm')
+            ->setDefaults([
+                'title' => $post->getTitle(),
+                'description' => $post->getDescription()
+            ]);
+    }
+
+    public function actionEdit($id)
+    {
+        $post = $this->entityManager->getRepository(Post::class)->find($id);
+        $this->post = $post;
 
     }
+
 
     //formComponenta
 
-      public function createComponentPostForm(): Form
-      {
-          $form = new Form();
-          $form->addText('title');
-          $form->addText('description');
-          $form->addSubmit('send', 'Odeslat');
-          $form->onSuccess[] = [$this, 'formOk'];
-          return $form;
-      }
+    public function createComponentPostForm(): Form
+    {
+        $form = new Form();
+        $form->addText('title')->addRule($form::LENGTH, 'Musí být vyplněné', [1, 30]);;
+        $form->addText('description')->setRequired(true);
+        $form->addSubmit('send', 'Odeslat');
+        $form->onSuccess[] = [$this, 'formOk'];
+        return $form;
+    }
 
 
     public function formOk(Form $form, $data): void
     {
         $post = new Post();
-        $post->setTitle($data->title);
-        $post->setDescription($data->description);
-        $post->setAuthor('Tonda Omáčka');
-        $label = new Label();
-        $label->setText('label text'. random_int(1, 2002));
-        $post->addLabel($label);
-        $this->entityManager->persist($post);
-        $this->entityManager->flush();
+        if ($this->getAction() === 'edit') {
+            $post = $this->post;
+        }
 
-        $this->flashMessage('Uloženo.');
+        if ($form->isSubmitted() && $form->isValid()) {
+            $post->setTitle($data->title);
+            $post->setDescription($data->description);
+            $post->setAuthor('Tonda Omáčka');
+            if ($this->getAction() !== 'edit') {
+                $label = new Label();
+                $label->setText('label text' . random_int(1, 2002));
+                $post->addLabel($label);
+            }
+
+            $this->entityManager->persist($post);
+            $this->entityManager->flush();
+        }
+
+
+        $this->flashMessage('Uloženo');
         $this->redirect('Post:show');
     }
 
