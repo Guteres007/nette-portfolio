@@ -21,6 +21,7 @@ class PostPresenter extends \Nette\Application\UI\Presenter
 
     private $post;
 
+
     public function renderShow()
     {
         $this->template->posts = $this->entityManager->getRepository(Post::class)->findAll();
@@ -31,7 +32,7 @@ class PostPresenter extends \Nette\Application\UI\Presenter
         $post = $this->entityManager->getRepository(Post::class)->find($id);
 
         if (!$post) {
-            return $this->redirect('Homepage:');
+            return $this->error('A ja jaj');
         }
         $this->getComponent('postForm')
             ->setDefaults([
