@@ -8,9 +8,10 @@ use App\Entities\User;
 use App\Secure\Auth;
 use Doctrine\ORM\Decorator\EntityManagerDecorator;
 use Nette\Application\UI\Presenter;
+use Nette\Application\UI\Form;
 
 
-class LoginPresenter extends Presenter
+class LoginPresenter extends BasePresenter
 {
     /**
      * @inject
@@ -18,21 +19,24 @@ class LoginPresenter extends Presenter
      */
     public $auth;
 
-    /**
-     * @inject
-     * @var EntityManagerDecorator
-     */
-    public $entityManager;
 
-    public function renderIndex()
+    public function createComponentLoginForm() : Form
     {
-        $oo = $this->entityManager->find(User::class, 1);
-        bdump($oo);
+        $form = new Form();
+        $form->addText('username');
+        $form->addText('password');
+        $form->onSuccess[] = [$this, 'formOk'];
+        return $form;
     }
 
-    public function actionIndex()
+    public function formOk(Form $form, $data )
     {
-       $this->auth->authenticate('Guteres', '123456');
+
+        $this->auth->authenticate($data->username, $data->password);
+
+        //'Guteres', '123456'
+        $this->flashMessage('Přihlášen', 'success');
+        $this->redirect('Post:index');
 
     }
 }

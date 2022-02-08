@@ -1,11 +1,13 @@
 {block content}
 
 
-    <form>
-        <input type="text" name="username">
-        <input type="text" name="password">
-        <button>Odeslat</button>
+    <form n:name="loginForm">
+        <input type="text" n:name="username">
+        <input type="text" n:name="password">
+        <button type="submit">Odeslat</button>
     </form>
 
+
+    <a href="{link Logout:logout}">Odhlásit</a>
 
 {/block}

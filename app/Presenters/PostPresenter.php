@@ -11,7 +11,7 @@ use Nette\Application\UI\Form;
 use Nette\Application\UI\Presenter;
 use Nette\Http\Request;
 
-class PostPresenter extends \Nette\Application\UI\Presenter
+class PostPresenter extends BasePresenter
 {
     /**
      * @inject
@@ -28,7 +28,7 @@ class PostPresenter extends \Nette\Application\UI\Presenter
     private $post;
 
 
-    public function renderShow()
+    public function renderIndex()
     {
        $this->fileUploader->showMessage();
         $this->template->posts = $this->entityManager->getRepository(Post::class)->findAll();
@@ -93,7 +93,7 @@ class PostPresenter extends \Nette\Application\UI\Presenter
 
 
         $this->flashMessage('Uloženo');
-        $this->redirect('Post:show');
+        $this->redirect('Post:index');
     }
 
 
