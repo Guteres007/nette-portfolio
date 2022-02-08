@@ -8,6 +8,7 @@ class MenuControl extends Control
 {
     public function render(): void
     {
-        $this->template->render(__DIR__ . '/menu.latte');
+
+        $this->template->render(__DIR__  . '/../templates/menu.latte');
     }
 }
