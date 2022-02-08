@@ -19,11 +19,18 @@ class PostPresenter extends \Nette\Application\UI\Presenter
      */
     public $entityManager;
 
+    /**
+     * @inject
+     * @var \App\Services\FileUploader
+     */
+    public $fileUploader;
+
     private $post;
 
 
     public function renderShow()
     {
+       $this->fileUploader->showMessage();
         $this->template->posts = $this->entityManager->getRepository(Post::class)->findAll();
     }
 
@@ -47,6 +54,7 @@ class PostPresenter extends \Nette\Application\UI\Presenter
         $this->post = $post;
 
     }
+
 
 
     //formComponenta
