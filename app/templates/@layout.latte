@@ -12,10 +12,12 @@
 <div n:foreach="$flashes as $flash" n:class="flash, $flash->type">{$flash->message}</div>
 
 
+
 {control menu}
 {if !$user->isLoggedIn()}
     <a href="{link Login:index}">Login</a>
 {else}
+    <a href="{link :Admin:Dashboard:index}"><strong>admin link</strong></a>
     <a href="{link Logout:logout}">Odhlásit</a>
 {/if}
 {include content}
