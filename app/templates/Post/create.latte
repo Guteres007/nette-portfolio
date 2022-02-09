@@ -1,6 +1,6 @@
 {block content}
 
-
+{$user->isAllowed('user', 'create')}
     <form n:name="postForm" >
         <input type="text" n:name="title">
         <input type="text" n:name="description">

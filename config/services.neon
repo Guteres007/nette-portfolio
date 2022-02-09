@@ -2,3 +2,4 @@ services:
 	- App\Router\RouterFactory::createRouter
 	- App\Services\FileUploader('okss')
 	- App\Secure\Auth
+	- App\Secure\Authorizator
