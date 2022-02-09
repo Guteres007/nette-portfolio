@@ -24,7 +24,7 @@ class LoginPresenter extends BasePresenter
     {
         $form = new Form();
         $form->addText('username');
-        $form->addText('password');
+        $form->addPassword('password');
         $form->onSuccess[] = [$this, 'formOk'];
         return $form;
     }

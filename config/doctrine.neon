@@ -3,9 +3,9 @@ nettrine.dbal:
     connection:
         driver: pdo_mysql
         host: '127.0.0.1'
-        user: 'root'
+        user: '%db_username%'
         password:
-        dbname: 'web-portfolio-nette'
+        dbname: '%dbname%'
         port: 3306
 
 

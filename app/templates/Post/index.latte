@@ -8,6 +8,9 @@
             {foreach $post->getLabels() as $label}
                 <span style="background: red">{$label->getText()}</span>
             {/foreach}
+            {if $user->isLoggedIn()}
+                <a href="{link Post:delete $post->getId()}">delete</a>
+            {/if}
             <a href="{link Post:edit $post->getId()}">Edit</a>
         </li>
     </ul>

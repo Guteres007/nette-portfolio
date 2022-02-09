@@ -1,11 +1,12 @@
 {block content}
 
-
+{if !$user->isLoggedIn()}
     <form n:name="loginForm">
         <input type="text" n:name="username">
-        <input type="text" n:name="password">
+        <input type="password" n:name="password">
         <button type="submit">Odeslat</button>
     </form>
+ {/if}
 
 
 

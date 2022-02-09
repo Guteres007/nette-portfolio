@@ -55,6 +55,14 @@ class PostPresenter extends BasePresenter
 
     }
 
+    public function actionDelete($id)
+    {
+        $post = $this->entityManager->getRepository(Post::class)->find($id);
+        $this->entityManager->remove($post);
+        $this->entityManager->flush();
+        $this->flashMessage('Smazáno', 'success');
+        $this->redirect('Post:index');
+    }
 
 
     //formComponenta

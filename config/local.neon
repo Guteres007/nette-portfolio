@@ -2,9 +2,10 @@ includes:
     - doctrine.neon
 
 parameters:
-
+    dbname: web-portfolio-nette
+    db_username: root
 
 database:
-	dsn: 'mysql:host=127.0.0.1;dbname=web-portfolio-nette'
-	user: 'root'
+	dsn: 'mysql:host=127.0.0.1;dbname=%dbname%'
+	user: '%db_username%'
 	password:
