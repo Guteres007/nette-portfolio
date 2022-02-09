@@ -33,7 +33,7 @@ class LoginPresenter extends BasePresenter
     {
 
         $this->auth->authenticate($data->username, $data->password);
-
+        $this->getUser()->login($data->username, $data->password);
         //'Guteres', '123456'
         $this->flashMessage('Přihlášen', 'success');
         $this->redirect('Post:index');

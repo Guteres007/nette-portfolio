@@ -10,6 +10,13 @@ application:
 session:
 	expiration: 14 days
 
+security:
+	authentication:
+		# po jak dlouhé době nečinnosti bude uživatel odhlášen
+		expiration: 30 minutes        # (string) výchozí je nenastaveno
+
+		# kam ukládat informace o přihlášeném uživateli
+		storage: session              # (session|cookie) výchozí je session
 
 di:
 	export:
