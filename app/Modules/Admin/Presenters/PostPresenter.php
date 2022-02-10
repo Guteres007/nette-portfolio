@@ -7,6 +7,7 @@ namespace App\Modules\Admin\Presenters;
 use App\Entities\Label;
 use App\Entities\Post;
 use Nette\Application\UI\Form;
+use Nette\Neon\Neon;
 
 
 class PostPresenter extends AdminPresenter
@@ -25,11 +26,16 @@ class PostPresenter extends AdminPresenter
 
     private $post;
 
+    private $uploadDir;
 
+    public function __construct($uploadDir)
+    {
+        $this->uploadDir = $uploadDir;
+    }
 
     public function renderIndex()
     {
-        $this->template->posts = $this->entityManager->getRepository(Post::class)->findAll();
+        $this->template->posts = $this->entityManager->getRepository(Post::class)->findBy([], ['id' => 'desc']);
     }
 
     public function renderEdit($id)
@@ -48,8 +54,8 @@ class PostPresenter extends AdminPresenter
 
     public function actionEdit($id)
     {
-        $post = $this->entityManager->getRepository(Post::class)->find($id);
-        $this->post = $post;
+        $this->post = $this->entityManager->getRepository(Post::class)->find($id);
+
 
     }
 
@@ -69,7 +75,8 @@ class PostPresenter extends AdminPresenter
     {
         $form = new Form();
         $form->addText('title')->addRule($form::LENGTH, 'Musí být vyplněné', [1, 30]);;
-        $form->addText('description')->setRequired(true);
+        $form->addTextArea('description')->setRequired(true);
+        $form->addUpload('image');
         $form->addSubmit('send', 'Odeslat');
         $form->onSuccess[] = [$this, 'formOk'];
         return $form;
@@ -78,6 +85,11 @@ class PostPresenter extends AdminPresenter
 
     public function formOk(Form $form, $data): void
     {
+
+        $image = $data->image;
+        $imageName = $this->uploadDir ."/". random_int(999, 99999) . $image->getSanitizedName();
+        $image->move($imageName);
+
         $post = new Post();
         if ($this->getAction() === 'edit') {
             $post = $this->post;
@@ -86,7 +98,8 @@ class PostPresenter extends AdminPresenter
         if ($form->isSubmitted() && $form->isValid()) {
             $post->setTitle($data->title);
             $post->setDescription($data->description);
-            $post->setAuthor('Tonda Omáčka');
+            $post->setImageName($imageName);
+            $post->setAuthor('Martin Andráši');
             if ($this->getAction() !== 'edit') {
                 $label = new Label();
                 $label->setText('label text' . random_int(1, 2002));
@@ -98,7 +111,7 @@ class PostPresenter extends AdminPresenter
         }
 
 
-        $this->flashMessage('Uloženo');
+        $this->flashMessage('Uloženo', 'success');
         $this->redirect('Post:index');
     }
 

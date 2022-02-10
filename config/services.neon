@@ -3,3 +3,4 @@ services:
 	- App\Services\FileUploader('okss')
 	- App\Secure\Auth
 	- App\Secure\Authorizator
+	- App\Modules\Admin\Presenters\PostPresenter(%directories.upload%)

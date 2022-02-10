@@ -1,20 +1,44 @@
 {block content}
 
-    <ul>
-        <li n:foreach="$posts as $post">
-            {$post->getId()}
-            {$post->getTitle()}
-            {$post->getDescription()}
-            {foreach $post->getLabels() as $label}
-                <span style="background: red">{$label->getText()}</span>
-            {/foreach}
-            {if $user->isLoggedIn()}
-                <a href="{link Post:delete $post->getId()}" onclick="return confirm('Smazat?')">delete</a>
-            {/if}
-            <a href="{link Post:edit $post->getId()}">Edit</a>
-        </li>
-    </ul>
+    <div class="col-12 mt-3">
+        <a class="btn btn-success" n:href="Post:create">Vytvořit</a>
+    </div>
 
-    <a n:href="Post:create">Vytvořit</a>
+
+    <div class="col-12">
+
+        <table class="table mt-3">
+            <thead>
+            <tr>
+                <th scope="col">#</th>
+                <th scope="col">Img</th>
+                <th scope="col">Title</th>
+                <th scope="col">Description</th>
+                <th scope="col">Labels</th>
+                <th></th>
+            </tr>
+            </thead>
+            <tbody>
+            <tr n:foreach="$posts as $post">
+                <th scope="row">{$post->getId()}</th>
+                <td><img class="img-fluid" style="max-width: 100px" src="/{$post->getImageName()}" alt=""></td>
+                <td>{$post->getTitle()}</td>
+                <td>{$post->getDescription()}</td>
+                <td>{foreach $post->getLabels() as $label}
+                        <span style="background: red">{$label->getText()}</span>
+                    {/foreach}</td>
+                <td>
+                    {if $user->isLoggedIn()}
+                        <a class="btn btn-outline-danger"  href="{link Post:delete $post->getId()}" onclick="return confirm('Smazat?')">Delete</a>
+                    {/if}
+                    <a class="btn btn-primary" href="{link Post:edit $post->getId()}">Edit</a>
+                </td>
+            </tr>
+
+            </tbody>
+        </table>
+
+    </div>
+
 
 {/block}

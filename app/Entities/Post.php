@@ -41,6 +41,12 @@ class Post
      */
     private $labels;
 
+    /**
+     * @ORM\Column(type="string", nullable=true)
+     */
+    private $imageName;
+
+
     public function __construct()
     {
         $this->labels = new ArrayCollection();
@@ -122,6 +128,22 @@ class Post
         }
 
         return $this;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getImageName()
+    {
+        return $this->imageName;
+    }
+
+    /**
+     * @param mixed $imageName
+     */
+    public function setImageName($imageName): void
+    {
+        $this->imageName = $imageName;
     }
 
 }
