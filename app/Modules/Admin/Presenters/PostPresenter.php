@@ -1,17 +1,15 @@
 <?php
 
 
-namespace App\Presenters;
+namespace App\Modules\Admin\Presenters;
 
 
 use App\Entities\Label;
 use App\Entities\Post;
-use Doctrine\ORM\EntityManager;
 use Nette\Application\UI\Form;
-use Nette\Application\UI\Presenter;
-use Nette\Http\Request;
 
-class PostPresenter extends BasePresenter
+
+class PostPresenter extends AdminPresenter
 {
     /**
      * @inject
@@ -26,6 +24,7 @@ class PostPresenter extends BasePresenter
     public $fileUploader;
 
     private $post;
+
 
 
     public function renderIndex()

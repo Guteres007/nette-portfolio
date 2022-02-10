@@ -10,6 +10,6 @@ class LogoutPresenter extends BasePresenter
 {
     public function actionLogout() {
         $this->getUser()->logout();
-        $this->redirect('Post:index');
+        $this->redirect('Homepage:default');
     }
 }
