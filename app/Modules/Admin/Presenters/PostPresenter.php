@@ -29,7 +29,6 @@ class PostPresenter extends AdminPresenter
 
     public function renderIndex()
     {
-       $this->fileUploader->showMessage();
         $this->template->posts = $this->entityManager->getRepository(Post::class)->findAll();
     }
 

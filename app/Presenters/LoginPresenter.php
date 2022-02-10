@@ -36,7 +36,7 @@ class LoginPresenter extends BasePresenter
         $this->getUser()->login($data->username, $data->password);
         //'Guteres', '123456'
         $this->flashMessage('Přihlášen', 'success');
-        $this->redirect('Admin:Post:index');
+        $this->redirect('Admin:Dashboard:index');
 
     }
 }

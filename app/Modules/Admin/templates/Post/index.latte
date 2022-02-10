@@ -9,7 +9,7 @@
                 <span style="background: red">{$label->getText()}</span>
             {/foreach}
             {if $user->isLoggedIn()}
-                <a href="{link Post:delete $post->getId()}">delete</a>
+                <a href="{link Post:delete $post->getId()}" onclick="return confirm('Smazat?')">delete</a>
             {/if}
             <a href="{link Post:edit $post->getId()}">Edit</a>
         </li>

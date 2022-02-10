@@ -10,7 +10,7 @@ class AdminPresenter extends \Nette\Application\UI\Presenter
     {
         parent::startup();
         if (!$this->getUser()->isLoggedIn()) {
-            $this->error('Forbidden', 403);
+            $this->error('Nemáš oprávnění debile ', 403);
         }
     }
 }
