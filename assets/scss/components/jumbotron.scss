@@ -1,0 +1,98 @@
+.jumbotron {
+    padding: 280px 14px 240px 14px;
+    @media #{$desktop-large} {
+        padding: 100px 14px 100px 14px;
+    }
+    @media #{$desktop-small} {
+        padding: 14px 14px 0 14px;
+        text-align: center;
+    }
+    @media #{$desktop-small} {
+        padding: 14px 14px 0 14px;
+        text-align: center;
+    }
+    .main-photo {
+        position: absolute;
+        background: url("/img/background-shape.svg") no-repeat;
+        bottom: 0;
+        background-position: right;
+        background-size: contain;
+        height: 544px;
+        width: 628px;
+        right: 30px;
+        @media #{$desktop-large} {
+            height: 301px;
+            width: 332px;
+            right: 50px;
+        }
+
+        @media #{$desktop-small} {
+            margin-top: 30px;
+            width: 50%;
+            position: relative;
+            left: 50%;
+            transform: translateX(-50%);
+            height: auto;
+            right: 0;
+        }
+
+        @media #{$tablet} {
+            margin-top: 30px;
+            width: 100%;
+            position: relative;
+            height: auto;
+            right: 0;
+        }
+
+    }
+    img {
+        position: absolute;
+        bottom: 0;
+        max-width: 100%;
+        @media #{$desktop-large} {
+            right: 0;
+        }
+        @media #{$desktop-small} {
+            position: relative;
+        }
+    }
+    h1 {
+        margin: 0;
+        padding: 0;
+    }
+    span {
+        display: inline-block;
+        height: 96px;
+        margin: 0;
+        padding: 0;
+        color: #00191f;
+        font-size: 76px;
+        font-weight: 600;
+        line-height: 96px;
+        border-bottom: 2px solid #f65d0a;
+        @media #{$desktop-large} {
+            font-size: 30px;
+            height: 70px;
+        }
+        @media #{$desktop-small} {
+            font-size: 30px;
+            height: 70px;
+        }
+    }
+    p {
+        margin: 0;
+        padding: 0;
+        color: #00191f;
+        font-size: 76px;
+        font-weight: 600;
+        line-height: 96px;
+        @media #{$desktop-large} {
+            font-size: 30px;
+            line-height: 50px;
+        }
+        @media #{$desktop-small} {
+            font-size: 30px;
+            line-height: 50px;
+        }
+    }
+}

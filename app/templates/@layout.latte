@@ -1,10 +1,25 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="utf-8">
-    <meta name="viewport" content="width=device-width">
+    <title>Martin Andráši | {ifset title}{include title|stripHtml} Webový vývojář {/ifset}</title>
 
-    <title>{ifset title}{include title|stripHtml} | {/ifset}Nette Web</title>
+    <meta charset="utf-8">
+
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#f65d0a">
+    <meta name="author" content="Martin Andráši">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="description" content="✅Tvorba úspěšných webových stránek s moderním designem na míru. ✅">
+    <meta property="og:title" content="Martin Andráši | {ifset title}{include title|stripHtml} Webový vývojář {/ifset}">
+    <meta property="og:url" content="https://www.andrasi.cz">
+    <meta property="og:description" content="Tvorba úspěšných webových stránek s moderním designem na míru.">
+    <meta property="og:image" content="http://www.andrasi.cz/img/social-reklama-1200x628.png">
+    <link rel="shortcut icon" href="/img/martin-andrasi-favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+
+    <link rel="stylesheet" href="/css/index.css">
 </head>
 
 <body>
@@ -14,12 +29,14 @@
 
 
 {control menu}
+
 {if !$user->isLoggedIn()}
     <a href="{link Login:index}">Login</a>
 {else}
     <a href="{link :Admin:Dashboard:index}"><strong>admin link</strong></a>
     <a href="{link Logout:logout}">Odhlásit</a>
 {/if}
+
 {include content}
 
 	{block scripts}

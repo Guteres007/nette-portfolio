@@ -1,0 +1,28 @@
+{
+  "name": "web-portfolio-nette",
+  "version": "1.0.0",
+  "description": "Nette Web Project =================",
+  "main": "index.js",
+  "dependencies": {
+    "bootstrap": "^4.5.3"
+  },
+  "devDependencies": {
+    "laravel-mix": "^6.0.42",
+    "resolve-url-loader": "^5.0.0",
+    "sass": "^1.49.7",
+    "sass-loader": "^12.1.0"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/Guteres007/Nette-verca.git"
+  },
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/Guteres007/Nette-verca/issues"
+  },
+  "homepage": "https://github.com/Guteres007/Nette-verca#readme"
+}

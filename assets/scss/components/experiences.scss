@@ -1,0 +1,71 @@
+.experiences {
+    background-color: #ebfcff;
+    padding: 180px 0 160px 0;
+    @media #{$desktop-large} {
+        padding: 90px 0 80px 0;
+    }
+    @media #{$desktop-small} {
+        padding: 30px 0;
+      }
+    p {
+        color: #00191f;
+        font-size: 76px;
+        font-weight: 600;
+        line-height: 96px;
+        @media #{$desktop-large} {
+            margin-top: 20px;
+            font-size: 40px;
+            line-height: 60px;
+        }
+        @media #{$desktop-small} {
+            text-align: center;
+            font-size: 30px;
+            line-height: 45px;
+        }
+    }
+    span::not(.inline) {
+        color: #00191f;
+        font-family: Poppins;
+        font-size: 123px;
+        font-weight: 400;
+        line-height: 152px;
+        display: block;
+        @media #{$desktop-small} {
+            font-size: 30px;
+            line-height: 45px;
+        }
+    }
+    span.inline {
+        display: inline-block;
+    }
+    .years .number {
+        display: block;
+        color: #00191f;
+        font-size: 123px;
+        font-weight: 400;
+        @media #{$desktop-large} {
+            line-height: 145px;
+        }
+        @media #{$desktop-small} {
+            font-size: 40px;
+            line-height: 60px;
+        }
+    }
+    small {
+        color: #00191f;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        line-height: 24px;
+    }
+
+}
+
+@media #{$desktop-small} {
+    .experiences .years {
+        text-align: center;
+    }
+    .experiences br {
+        display: none;
+    }
+}

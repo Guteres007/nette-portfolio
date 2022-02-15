@@ -1,0 +1,257 @@
+
+/*!
+ * Bootstrap via npm
+ * Copyright 2018 @mdo
+ * Licensed MIT
+ */
+
+// Functions, variables, and mixins must come first.
+//
+// - Variables and mixins are dependant on functions
+// - In order to override Sass's default variables, those default variables must
+//   come first
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Override variable defaults
+//
+// Here is where we customize the variables from Bootstrap's `variables.scss`.
+// We copy-pasta variables we need from that source file, remove the `!default`
+// flag, and finally change their values.
+@import "./custom.scss";
+
+// @import "node_modules/bootstrap/scss/root";
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/grid";
+// @import "node_modules/bootstrap/scss/tables";
+// @import "node_modules/bootstrap/scss/forms";
+// @import "node_modules/bootstrap/scss/buttons";
+// @import "node_modules/bootstrap/scss/transitions";
+// @import "node_modules/bootstrap/scss/dropdown";
+// @import "node_modules/bootstrap/scss/button-group";
+// @import "node_modules/bootstrap/scss/input-group";
+// @import "node_modules/bootstrap/scss/custom-forms";
+// @import "node_modules/bootstrap/scss/nav";
+// @import "node_modules/bootstrap/scss/navbar";
+// @import "node_modules/bootstrap/scss/card";
+// @import "node_modules/bootstrap/scss/breadcrumb";
+// @import "node_modules/bootstrap/scss/pagination";
+// @import "node_modules/bootstrap/scss/badge";
+// @import "node_modules/bootstrap/scss/jumbotron";
+// @import "node_modules/bootstrap/scss/alert";
+// @import "node_modules/bootstrap/scss/progress";
+// @import "node_modules/bootstrap/scss/media";
+// @import "node_modules/bootstrap/scss/list-group";
+// @import "node_modules/bootstrap/scss/close";
+// @import "node_modules/bootstrap/scss/modal";
+// @import "node_modules/bootstrap/scss/tooltip";
+// @import "node_modules/bootstrap/scss/popover";
+// @import "node_modules/bootstrap/scss/carousel";
+@import "node_modules/bootstrap/scss/utilities";
+// @import "node_modules/bootstrap/scss/print";
+
+
+@import "./base/normalize.scss";
+@import "./base/fonts.scss";
+@import "./base/media.scss";
+
+@import "./components/buttons.scss";
+@import "./components/header.scss";
+
+@import "./components/footer.scss";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+
+
+h1 {
+  margin-top: 30px;
+  color: #00191f;
+  font-size: 47px;
+  font-weight: 600;
+}
+
+h2 {
+  margin-top: 30px;
+  color: #00191f;
+  font-size: 30px;
+  font-weight: 600;
+}
+
+h3 {
+  margin-top: 30px;
+  color: #00191f;
+}
+h1,h2,h3 {
+  line-height: 1.3;
+}
+@include media-breakpoint-down(md) {
+  h1 {
+    font-size: 30px;
+  }
+  h2 {
+    font-size: 25px;
+  }
+  h3 {
+    font-size: 22px;
+  }
+ }
+.blog__post {
+  display: inline-block;
+  margin-bottom: 20px;
+}
+.blog {
+  min-height: 80vh;
+  padding-bottom: 80px;
+}
+.post {
+  padding-bottom: 80px;
+}
+.blog .blog__item {
+  margin-bottom: 30px;
+}
+.blog .blog__item:hover {
+  text-decoration: none;
+}
+.blog .blog__item .title {
+  line-height: 36px;
+}
+@include media-breakpoint-down(md) {
+  .blog .blog__item .title {
+    line-height: 1.1;
+  }
+}
+
+@include media-breakpoint-down(sm) {
+  .blog .blog__item .title {
+    margin-top: 10px;
+  }
+}
+.blog .blog__item:hover .title {
+  text-decoration: underline;
+}
+.blog .blog__item .description {
+  color: #525c5e;
+}
+.blog .blog__item .date {
+  display: block;
+  margin-top: 16px;
+  color: #525c5e;
+  font-weight: 600;
+}
+.blog-content {
+  padding-bottom: 40px;
+}
+.pagination {
+  margin-top: 30px;
+  .pagination__left {
+    padding: 10px 30px;
+    background: #f65d0a;
+    color: #fff;
+    border-radius: 4px;
+  }
+
+  .pagination__right {
+    padding: 10px 30px;
+    background: #f65d0a;
+    color: #fff;
+    border-radius: 4px;
+  }
+}
+.blog__prev-next {
+  .prev-next__title {
+    font-size: 25px;
+    margin-top: 17px;
+    line-height: 1.1;
+  }
+  .prev-next__post:hover {
+    text-decoration: none;
+  }
+  .prev-next__post:hover .prev-next__title {
+    text-decoration: underline;
+  }
+}
+@include media-breakpoint-down(md) {
+  .prev-next__post .prev-next__title {
+    font-size: 18px;
+    margin-top: 14px;
+  }
+}
+
+pre {
+  padding: 30px !important;
+  margin: 30px 0 30px 0 !important;
+}
+.text-orange {
+  color: #f65d0a;
+}
+.text-black {
+  color: #00191f;
+}
+
+.mb-30 {
+  margin-bottom: 30px;
+}
+.width-400 {
+  width: 400px;
+  max-width: 100%;
+}
+.width-100 {
+  width: 100px;
+  max-width: 100%;
+}
+.post ul {
+  list-style: none;
+}
+.post ul > li:before {
+  content: "";
+  display: block;
+  position: absolute;
+  left: 0;
+  top: 2px;
+  width: 20px;
+  height: 20px;
+  background-image: url(/img/tick.svg);
+  background-size: 20px 20px;
+}
+
+.post ul > li {
+  position: relative;
+  padding-left: 30px;
+}
+
+@include media-breakpoint-down(md) {
+  .post ul {
+    padding-left: 0;
+  }
+}
+
+
+.iframe-container {
+  position: relative;
+  overflow: hidden;
+  width: 100%;
+  padding-top: 56.25%;
+}
+
+.responsive-iframe {
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  width: 100%;
+  height: 100%;
+}

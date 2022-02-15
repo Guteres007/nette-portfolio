@@ -1,0 +1,19 @@
+.button--orange {
+    padding: 20px 64px;
+    height: 64px;
+    border-radius: 8px;
+    background-color: #f65d0a;
+    font-weight: 600;
+    font-stretch: normal;
+    font-style: normal;
+    line-height: 1.5;
+    letter-spacing: 0.3px;
+    color: #ffffff;
+    display: inline-block;
+    text-decoration: none;
+    transition: all linear .250s;
+    &:hover {
+        background-color: #f65d0ae3;
+        color: #fff;
+    }
+}

@@ -1,0 +1,58 @@
+.prices {
+    padding: 120px 0 100px 0;
+    @media #{$desktop-large} {
+        padding: 90px 0 80px 0;
+    }
+    @media #{$desktop-small} {
+        padding: 30px 0;
+    }
+    h2 {
+        color: #6a7c81;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        line-height: 24px;
+    }
+    .header {
+        margin-top: 30px;
+        color: #00191f;
+        font-size: 76px;
+        font-weight: 600;
+        line-height: 96px;
+        @media #{$desktop-large} {
+            font-size: 40px;
+            line-height: 60px;
+        }
+        @media #{$desktop-small} {
+            font-size: 30px;
+            line-height: 45px;
+        }
+    }
+    .subheader {
+        margin-top: 50px;
+        color: #525c5e;
+        font-size: 18px;
+        font-weight: 400;
+        line-height: 24px;
+        @media #{$desktop-small} {
+            margin-top: 30px;
+        }
+        }
+    .price {
+        margin-top: 50px;
+        color: #00191f;
+        font-size: 47px;
+        font-weight: 600;
+        line-height: 64px;
+        @media #{$desktop-small} {
+            font-size: 30px;
+            margin-top: 30px;
+        }
+    }
+    a {
+        margin-top: 60px;
+        @media #{$desktop-small} {
+            margin-top: 30px;
+        }
+    }
+}

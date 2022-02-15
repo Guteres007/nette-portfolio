@@ -1,0 +1,109 @@
+.contact-section {
+    padding-top: 120px;
+    padding-bottom: 140px;
+    @media #{$desktop-large} {
+        padding: 90px 0 80px 0;
+    }
+    @media #{$desktop-small} {
+        padding: 30px 0;
+    }
+    h2 {
+        color: #6a7c81;
+        font-size: 16px;
+        font-weight: 600;
+        letter-spacing: 0.3px;
+        line-height: 24px;
+    }
+    .header {
+        margin-top: 30px;
+        color: #00191f;
+        font-size: 76px;
+        font-weight: 600;
+        line-height: 96px;
+        @media #{$desktop-large} {
+            font-size: 40px;
+            line-height: 60px;
+        }
+        @media #{$desktop-small} {
+            font-size: 30px;
+            line-height: 45px;
+        }
+    }
+    .margin {
+        margin-bottom: 170px;
+        @media #{$desktop-large} {
+            margin-bottom: 50px;
+        }
+        @media #{$desktop-small} {
+            margin-bottom: 30px;
+        }
+    }
+    .card {
+        position: relative;
+        width: 550px;
+        max-width: 100%;
+        background: url("/img/contact-mask.png") no-repeat top;
+        border-radius: 8px;
+        background-color: #d7f8fe;
+        padding: 70px 32px 200px 32px;
+        @media #{$desktop-large} {
+            text-align: center;
+            padding: 40px 40px 100px 40px;
+            margin: auto;
+        }
+        @media #{$desktop-small} {
+            text-align: center;
+            padding: 30px;
+            margin: auto;
+        }
+        hr {
+            position: absolute;
+            bottom:  50px;
+            left: 32px;
+            width: 92px;
+            height: 2px;
+            background: #fc5b00;
+            padding: 0;
+            border: 0;
+            @media #{$mobile} {
+                bottom: 10px;
+            }
+            @media #{$desktop-small} {
+                display: none;
+            }
+
+        }
+        a {
+            color: #f95c00;
+            font-size: 30px;
+            font-weight: 600;
+            line-height: 64px;
+            @media #{$desktop-small} {
+                font-size: 16px;
+                line-height: 30px;
+            }
+        }
+    }
+
+    .social-sites {
+        p {
+            color: #00191f;
+            font-size: 47px;
+            font-weight: 600;
+            line-height: 64px;
+            @media #{$desktop-large} {
+                text-align: center;
+                margin-top: 30px;
+                font-size: 40px;
+                line-height: 60px;
+            }
+            @media #{$desktop-small} {
+                text-align: center;
+                margin-top: 30px;
+                font-size: 30px;
+                line-height: 45px;
+            }
+        }
+    }
+
+}

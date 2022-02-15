@@ -1,0 +1,267 @@
+
+/*!
+ * Bootstrap via npm
+ * Copyright 2018 @mdo
+ * Licensed MIT
+ */
+
+// Functions, variables, and mixins must come first.
+//
+// - Variables and mixins are dependant on functions
+// - In order to override Sass's default variables, those default variables must
+//   come first
+@import "node_modules/bootstrap/scss/functions";
+@import "node_modules/bootstrap/scss/variables";
+@import "node_modules/bootstrap/scss/mixins";
+
+// Override variable defaults
+//
+// Here is where we customize the variables from Bootstrap's `variables.scss`.
+// We copy-pasta variables we need from that source file, remove the `!default`
+// flag, and finally change their values.
+@import "./custom.scss";
+
+// @import "node_modules/bootstrap/scss/root";
+@import "node_modules/bootstrap/scss/reboot";
+@import "node_modules/bootstrap/scss/type";
+@import "node_modules/bootstrap/scss/images";
+@import "node_modules/bootstrap/scss/code";
+@import "node_modules/bootstrap/scss/grid";
+// @import "node_modules/bootstrap/scss/tables";
+// @import "node_modules/bootstrap/scss/forms";
+// @import "node_modules/bootstrap/scss/buttons";
+// @import "node_modules/bootstrap/scss/transitions";
+// @import "node_modules/bootstrap/scss/dropdown";
+// @import "node_modules/bootstrap/scss/button-group";
+// @import "node_modules/bootstrap/scss/input-group";
+// @import "node_modules/bootstrap/scss/custom-forms";
+// @import "node_modules/bootstrap/scss/nav";
+// @import "node_modules/bootstrap/scss/navbar";
+// @import "node_modules/bootstrap/scss/card";
+// @import "node_modules/bootstrap/scss/breadcrumb";
+// @import "node_modules/bootstrap/scss/pagination";
+// @import "node_modules/bootstrap/scss/badge";
+// @import "node_modules/bootstrap/scss/jumbotron";
+// @import "node_modules/bootstrap/scss/alert";
+// @import "node_modules/bootstrap/scss/progress";
+// @import "node_modules/bootstrap/scss/media";
+// @import "node_modules/bootstrap/scss/list-group";
+// @import "node_modules/bootstrap/scss/close";
+// @import "node_modules/bootstrap/scss/modal";
+// @import "node_modules/bootstrap/scss/tooltip";
+// @import "node_modules/bootstrap/scss/popover";
+// @import "node_modules/bootstrap/scss/carousel";
+@import "node_modules/bootstrap/scss/utilities";
+// @import "node_modules/bootstrap/scss/print";
+
+
+@import "./base/normalize.scss";
+@import "./base/fonts.scss";
+@import "./base/media.scss";
+
+@import "./components/buttons.scss";
+@import "./components/header.scss";
+
+@import "./components/footer.scss";
+
+
+body {
+    font-family: 'Poppins', sans-serif;
+    overflow-x: hidden;
+
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+/* table name  */
+.price-table {
+  max-width: 90%;
+  margin: 0 auto;
+  margin-bottom: 20px;
+  margin-top: 30px;
+  font-size: 13px;
+  line-height: 1.4;
+  text-align: center;
+  padding: 10px;
+}
+/* main title  */
+.product-title-resp {
+  color:#1e78b7;
+  font-size:40px;
+  font-weight:600;
+}
+.comparison-table {
+  width: 100%;
+  border-collapse: collapse;
+  border-spacing: 0;
+  table-layout: auto;
+  border-radius: 8px 8px 0 0;
+  overflow: hidden;
+}
+@include media-breakpoint-down(md) {
+  .comparison-table thead th {
+    font-size: 12px;
+  }
+}
+.product {
+  background-color: #d8f8fd;
+  font-size: 18px;
+  color:#000000;
+  padding:15px 0px;
+  text-align:center;
+}
+.product-feature {
+  background-color: inherit;
+  font-size: 18px;
+  color:#000000;
+}
+.product__action {
+  background-color: #024d83;
+  color: #fff;
+}
+.product--radius {
+  border-radius: 8px 0 0 0;
+}
+.price-info-feature {
+  padding:50px 0px 50px 0px;
+  font-size: 36px;
+  border: 0px solid #fff;
+  background-color: inherit;
+  color:#222;
+  text-align:center;
+}
+.price-info1 {
+  padding:50px 0px 50px 0px;
+  font-size: 36px;
+  color: #545454;
+  border: 0px solid #E8E8E8;
+  background-color: #d8f8fd;
+  text-align:center;
+}
+.price-info2 {
+  padding:50px 0px 50px 0px;
+  font-size: 36px;
+  border: 0px solid #E8E8E8;
+  background-color: #024d83;
+  text-align:center;
+}
+.price-info2 .price-now span {
+  color: #fafafa;
+}
+.price-info3 {
+  padding:50px 0px 50px 0px;
+  font-size: 36px;
+  color: #545454;
+  border: 0px solid #E8E8E8;
+  background-color: #d8f8fd;
+  text-align:center;
+}
+.price-now span {
+  font-size: 40px;
+  color: #034d83;
+  text-align:center;
+}
+.price-now p {
+  font-size: 14px;
+  text-align: center;
+  line-height: 16px;
+  display: inline;
+  color: #545454;
+}
+.comparison-table td{
+  border-right: 1px solid #abcce4;
+  empty-cells: show;
+  padding: 15px;
+  border-top: 1px solid #abcce4;
+  border-bottom: 1px solid #abcce4;
+  color: #525252;
+  font-size: 16px;
+}
+.price-table tbody tr:nth-child(odd) {
+  display: none;
+}
+.compare-row {
+  background-color: #fff;
+  text-align: center;
+}
+.price-table tr{
+  text-align: center;
+  padding: 15px 0px 15px 0px;
+}
+.fa-check {
+  color: #69C7F1;
+}
+.fa-times {
+  color: red;
+}
+.get-started-btn {
+  background: #EC671A;
+  padding: 10px 20px;
+  font-size: 14px;
+  display: inline-block;
+  color: #fff;
+  text-decoration: none;
+  border-radius: 3px;
+  text-transform: uppercase;
+  margin: 5px 0 10px 0;
+  letter-spacing: 1px;
+  cursor: pointer;
+  -webkit-transition: .3s all ease;
+  transition: .3s all ease;
+}
+.get-started-btn:hover {
+  background: rgba(246,93,10,0.8902);
+  color: #fff;
+}
+@media screen and (min-width: 721px) and (max-width: 1000px) {
+  .price-now span {
+      font-size: 20px;
+ }
+  .price-now p {
+      display: block;
+ }
+}
+@media screen and (max-width: 728px) {
+  .price-table{
+      max-width: 100%;
+      padding: 0;
+ }
+
+ .comparison-table {
+      table-layout: fixed;
+ }
+  .product{
+      font-size: 16px;
+ }
+  .price-now span {
+      font-size: 16px;
+ }
+  .price-table td:first-child, .price-table th:first-child {
+      display: none;
+ }
+  .price-table tbody tr:nth-child(odd) {
+      display: table-row;
+      background-color: #e2e0e0;
+      font-weight:600;
+ }
+  .price-table td, .price-table th {
+      border: 0px solid #CCC;
+      border-top: none;
+      padding-left: 3px;
+      padding-right: 3px;
+      padding-top: 4px;
+      padding-bottom: 4px;
+      font-size: 11px;
+ }
+  .compare-row {
+      background-color: #ffffff;
+ }
+  .get-started-btn {
+      background-color: #EC671A;
+      padding: 6px 6px;
+      font-size: 10px;
+      letter-spacing: normal;
+ }
+}

@@ -1,0 +1,40 @@
+
+$desktop-large: "only screen and (max-width : 1230px)";
+$desktop-small: "only screen and (max-width : 990px)";
+$tablet: "only screen and (max-width : 768px)";
+$mobile: "only screen and (max-width : 540px)";
+
+@media #{$desktop-large} {
+    body {
+      //background-color: red;
+      // max-width: 48rem;
+      // margin-right: auto;
+      // margin-left: auto;
+      // background-color: transparent;
+    }
+  }
+  
+  @media #{$desktop-small} {
+    body {
+     // background-color: pink;
+      // max-width: 48rem;
+      // margin-right: auto;
+      // margin-left: auto;
+      // background-color: transparent;
+    }
+  }
+  @media #{$tablet} {
+    body {
+     // background-color: yellow;
+      // max-width: 48rem;
+      // margin-right: auto;
+      // margin-left: auto;
+      // background-color: transparent;
+    }
+  }
+  
+  @media #{$mobile} {
+    
+  }
+  
+ 

@@ -1,0 +1,28 @@
+$font-path: "/fonts";
+@font-face {
+    // This is parsed as a normal function call that takes a quoted string.
+    src: url("#{$font-path}/Poppins-Regular.ttf") format("truetype");
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 400;
+    font-display: fallback;
+}
+
+@font-face {
+    // This is parsed as a normal function call that takes an arithmetic
+    // expression.
+    src: url("#{$font-path}/Poppins-SemiBold.ttf") format("truetype");
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 600;
+    font-display: fallback;
+}
+
+@font-face {
+    // This is parsed as an interpolated special function.
+    src: url("#{$font-path}/Poppins-Bold.ttf") format("truetype");
+
+    font-family: 'Poppins', sans-serif;
+    font-weight: 700;
+    font-display: fallback;
+}
