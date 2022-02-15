@@ -15,11 +15,11 @@ final class RouterFactory
 	public static function createRouter(): RouteList
 	{
 		$router = new RouteList;
-        $router->addRoute('login', 'Login:index');
+        $router->addRoute('login', 'Frontend:Login:index');
         $router->withModule('Admin')
             ->addRoute('admin/<presenter>/<action>');
 
-		$router->addRoute('<presenter>/<action>[/<id>]', 'Homepage:default');
+		$router->addRoute('', 'Frontend:Homepage:default');
 
 
 		return $router;

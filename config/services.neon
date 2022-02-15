@@ -1,6 +1,6 @@
 services:
 	- App\Router\RouterFactory::createRouter
-	- App\Services\FileUploader('okss')
-	- App\Secure\Auth
-	- App\Secure\Authorizator
+	- App\Modules\Frontend\Services\FileUploader('okss')
+	- App\Modules\Frontend\Secure\Auth
+	- App\Modules\Frontend\Secure\Authorizator
 	- App\Modules\Admin\Presenters\PostPresenter(%directories.upload%)

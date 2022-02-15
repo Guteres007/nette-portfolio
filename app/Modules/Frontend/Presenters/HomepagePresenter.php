@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Presenters;
+namespace App\Modules\Frontend\Presenters;
 
 use Nette;
 

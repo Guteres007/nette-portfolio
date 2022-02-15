@@ -1,11 +1,12 @@
 <?php
 
 
-namespace App\Presenters;
+namespace App\Modules\Frontend\Presenters;
 
 
-use App\Entities\User;
-use App\Secure\Auth;
+use App\Modules\Frontend\Entities\User;
+use App\Modules\Frontend\Presenters\BasePresenter;
+use App\Modules\Frontend\Secure\Auth;
 use Doctrine\ORM\Decorator\EntityManagerDecorator;
 use Nette\Application\UI\Presenter;
 use Nette\Application\UI\Form;
@@ -36,7 +37,7 @@ class LoginPresenter extends BasePresenter
         $this->getUser()->login($data->username, $data->password);
         //'Guteres', '123456'
         $this->flashMessage('Přihlášen', 'success');
-        $this->redirect('Admin:Dashboard:index');
+        $this->redirect(':Admin:Dashboard:index');
 
     }
 }

@@ -4,8 +4,8 @@
 namespace App\Modules\Admin\Presenters;
 
 
-use App\Entities\Label;
-use App\Entities\Post;
+use App\Modules\Frontend\Entities\Label;
+use App\Modules\Frontend\Entities\Post;
 use Nette\Application\UI\Form;
 use Nette\Neon\Neon;
 
@@ -20,7 +20,7 @@ class PostPresenter extends AdminPresenter
 
     /**
      * @inject
-     * @var \App\Services\FileUploader
+     * @var \App\Modules\Frontend\Services\FileUploader
      */
     public $fileUploader;
 

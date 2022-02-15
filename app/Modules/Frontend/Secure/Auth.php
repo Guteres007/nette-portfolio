@@ -1,9 +1,9 @@
 <?php
 
 
-namespace App\Secure;
+namespace App\Modules\Frontend\Secure;
 
-use App\Entities\User;
+use App\Modules\Frontend\Entities\User;
 use Nette;
 use Nette\Security\IIdentity;
 use Nette\Security\SimpleIdentity;

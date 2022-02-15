@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Services;
+namespace App\Modules\Frontend\Services;
 
 
 class FileUploader

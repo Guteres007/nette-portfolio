@@ -1,9 +1,9 @@
 <?php
 
 
-namespace App\Presenters;
+namespace App\Modules\Frontend\Presenters;
 
-use App\Components\MenuControl;
+use App\Modules\Frontend\Components\MenuControl;
 use Nette\Application\UI\Presenter;
 
 class BasePresenter extends Presenter
