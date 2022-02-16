@@ -14,11 +14,22 @@ use Nette\Application\UI\Form;
 
 class LoginPresenter extends BasePresenter
 {
+
     /**
      * @inject
      * @var Auth
      */
     public $auth;
+
+
+    protected function startup()
+    {
+        parent::startup();
+        if ($this->getUser()->isLoggedIn()) {
+            $this->redirect(':Admin:Dashboard:index');
+        }
+    }
+
 
 
     public function createComponentLoginForm() : Form
