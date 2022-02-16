@@ -16,7 +16,7 @@ class BlogPresenter extends BasePresenter
 
     public function renderIndex()
     {
-        $this->template->posts = $this->entityManager->getRepository(Post::class)->findBy([]);
+        $this->template->posts = $this->entityManager->getRepository(Post::class)->findBy([],['id' => 'desc']);
 
     }
 

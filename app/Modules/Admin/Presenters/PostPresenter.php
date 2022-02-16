@@ -86,19 +86,22 @@ class PostPresenter extends AdminPresenter
     public function formOk(Form $form, $data): void
     {
 
-        $image = $data->image;
-        $imageName = $this->uploadDir ."/". random_int(999, 99999) . $image->getSanitizedName();
-        $image->move($imageName);
-
         $post = new Post();
+
         if ($this->getAction() === 'edit') {
             $post = $this->post;
+        }
+
+        if ($data->image->isOk()) {
+            $image = $data->image;
+            $imageName = $this->uploadDir ."/". random_int(999, 99999) . $image->getSanitizedName();
+            $image->move($imageName);
+            $post->setImageName($imageName);
         }
 
         if ($form->isSubmitted() && $form->isValid()) {
             $post->setTitle($data->title);
             $post->setDescription($data->description);
-            $post->setImageName($imageName);
             $post->setSlug($data->title);
             $post->setAuthor('Martin Andráši');
             if ($this->getAction() !== 'edit') {

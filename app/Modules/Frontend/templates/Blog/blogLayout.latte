@@ -35,12 +35,7 @@
 
 {control menu}
 
-{if !$user->isLoggedIn()}
-    <a href="{link Login:index}">Login</a>
-{else}
-    <a href="{link :Admin:Dashboard:index}"><strong>admin link</strong></a>
-    <a href="{link :Admin:Logout:logout}">Odhlásit</a>
-{/if}
+
 
 {include './../_includes/menu.latte'}
 <div>
@@ -59,7 +54,8 @@
 </div>
 
 {include './../_includes/footer.latte'}
-	{block scripts}
+
+{block scripts}
     <script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 {/block}
 </body>

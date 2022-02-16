@@ -4,6 +4,28 @@
 
 {varType App\Entities\Post $post}
 
-    {$post->getTitle()}
+
+
+    <div class="row">
+        <div class="col-12 col-xl-8 offset-xl-2">
+            <h1> {$post->getTitle()}</h1>
+            <strong class="blog__post"
+            >Publikováno:
+                {$post->getCreatedAt()}</strong
+            >
+            <article class="blog-content">
+                {$post->getDescription()|stripHtml}
+            </article>
+
+            <template>
+                <hr />
+                <h2 class="text-center">Články, které vás mohou také zajímat</h2>
+                <div>
+                    další
+                </div>
+            </template>
+        </div>
+    </div>
 
 {/block}
+

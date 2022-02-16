@@ -19,6 +19,7 @@ final class RouterFactory
         $router->addRoute('reference', 'Frontend:Testimonial:index');
         $router->addRoute('blog', 'Frontend:Blog:index');
         $router->addRoute('blog/<slug>', 'Frontend:Blog:show');
+        $router->addRoute('/video', 'Frontend:Video:index');
         $router->withModule('Admin')
             ->addRoute('admin/<presenter>/<action>');
 
