@@ -16,6 +16,9 @@ final class RouterFactory
 	{
 		$router = new RouteList;
         $router->addRoute('login', 'Frontend:Login:index');
+        $router->addRoute('reference', 'Frontend:Testimonial:index');
+        $router->addRoute('blog', 'Frontend:Blog:index');
+        $router->addRoute('blog/<slug>', 'Frontend:Blog:show');
         $router->withModule('Admin')
             ->addRoute('admin/<presenter>/<action>');
 

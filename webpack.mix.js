@@ -1,4 +1,5 @@
 let mix = require('laravel-mix');
 
 //mix.js('assets/scss/index.js', 'public/js');
-mix.sass('assets/scss/index.scss', 'www/css');
+mix.sass('assets/scss/index.scss', 'www/css')
+    .sass('assets/scss/blog.scss', 'www/css');

@@ -1,0 +1,9 @@
+{layout './postLayout.latte'}
+
+{block content}
+
+{varType App\Entities\Post $post}
+
+    {$post->getTitle()}
+
+{/block}

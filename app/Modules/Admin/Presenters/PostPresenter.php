@@ -4,8 +4,8 @@
 namespace App\Modules\Admin\Presenters;
 
 
-use App\Modules\Frontend\Entities\Label;
-use App\Modules\Frontend\Entities\Post;
+use App\Entities\Label;
+use App\Entities\Post;
 use Nette\Application\UI\Form;
 use Nette\Neon\Neon;
 
@@ -99,6 +99,7 @@ class PostPresenter extends AdminPresenter
             $post->setTitle($data->title);
             $post->setDescription($data->description);
             $post->setImageName($imageName);
+            $post->setSlug($data->title);
             $post->setAuthor('Martin Andráši');
             if ($this->getAction() !== 'edit') {
                 $label = new Label();

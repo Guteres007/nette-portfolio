@@ -4,6 +4,7 @@
 namespace App\Entities;
 use Doctrine\Common\Collections\ArrayCollection;
 use Doctrine\ORM\Mapping as ORM;
+use Nette\Utils\Strings;
 
 
 /**
@@ -12,6 +13,7 @@ use Doctrine\ORM\Mapping as ORM;
  */
 class Post
 {
+
 
 
     /**
@@ -46,9 +48,21 @@ class Post
      */
     private $imageName;
 
+    /**
+     * @ORM\Column(type="string", nullable=false)
+     */
+    private $slug;
+
+    /**
+     * @ORM\Column(type="datetime", nullable=true)
+     */
+    private $createdAt;
+
+
 
     public function __construct()
     {
+        $this->createdAt = new \DateTime('now');
         $this->labels = new ArrayCollection();
     }
 
@@ -146,4 +160,35 @@ class Post
         $this->imageName = $imageName;
     }
 
+    /**
+     * @return mixed
+     */
+    public function getCreatedAt()
+    {
+        return $this->createdAt->format('d. m. Y');
+    }
+
+    /**
+     * @param mixed $createdAt
+     */
+    public function setCreatedAt($createdAt): void
+    {
+        $this->createdAt = $createdAt;
+    }
+
+    /**
+     * @return mixed
+     */
+    public function getSlug()
+    {
+        return $this->slug;
+    }
+
+    /**
+     * @param mixed $slug
+     */
+    public function setSlug($slug): void
+    {
+        $this->slug = Strings::webalize(time() . $slug);
+    }
 }

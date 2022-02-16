@@ -4,61 +4,7 @@
 			<div class="cta-section">
 
 
-				<div class="menu">
-					<div class="container">
-						<div class="row">
-							<div class="col-6 d-flex align-items-center">
-								<a to="/" class="menu-anchor"> Martin Andráši </a>
-							</div>
-							<div class="col-6 d-lg-none text-right">
-								<span class="openMenu">Menu</span>
-							</div>
-							<div
-
-									class=" menuOpen col-12 col-lg-6 d-lg-flex align-items-center justify-content-end mobile-menu"
-							>
-								<a
-										href="/blog/reference"
-										class="menu-anchor menu-anchor--mr odkaz"
-
-								>
-									Reference
-								</a>
-
-								<a
-										href="/blog"
-										class="menu-anchor menu-anchor--mr odkaz"
-
-								>
-									Blog
-								</a>
-								<a
-										href="/video"
-										class="menu-anchor menu-anchor--mr odkaz"
-
-								>
-									Videa
-								</a>
-
-								<!--    <NuxtLink
-                                  to="/cenik"
-                                  class="menu-anchor menu-anchor--mr odkaz"
-                                  @click.native="openMenu"
-                                >
-                                  Ceník
-                                </NuxtLink>
-                                -->
-								<a
-										href="/#kontakt"
-										class="button--orange odkaz"
-								>
-									Kontakt
-								</a>
-							</div>
-						</div>
-					</div>
-				</div>
-
+				{include './../_includes/menu.latte'}
 
 
 				<div class="container">
@@ -418,10 +364,5 @@
 		</div>
 
 
-	<div>
-		<div class="footer text-center">
-			<p>Martin Andráši | IČO: 87241161</p>
-		</div>
-	</div>
 
 {/block}

@@ -22,7 +22,9 @@
 
 
 
+
     <link rel="stylesheet" href="/css/index.css?v={$cssVersion}">
+    <link rel="stylesheet" href="/css/blog.css?v={$cssVersion}">
 </head>
 
 <body>
@@ -40,9 +42,23 @@
     <a href="{link :Admin:Logout:logout}">Odhlásit</a>
 {/if}
 
+{include './../_includes/menu.latte'}
+<div>
+    <div class="container post">
+        <div class="row">
+            <div class="col-12 col-xl-8 offset-xl-2">
+                <h1>Blog</h1>
 
-{include content}
-{include '_includes/footer.latte'}
+                <article class="blog-content">
+                    {include content}
+                </article>
+
+            </div>
+        </div>
+    </div>
+</div>
+
+{include './../_includes/footer.latte'}
 	{block scripts}
     <script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
 {/block}
