@@ -1,7 +1,7 @@
 <?php
 
 
-namespace App\Modules\Frontend\Secure;
+namespace App\Modules\Admin\Secure;
 
 
 class Authorizator implements \Nette\Security\Authorizator

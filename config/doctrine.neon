@@ -38,7 +38,7 @@ nettrine.migrations:
 
 nettrine.orm.annotations:
     mapping:
-        App\Modules\Frontend\Entities: %appDir%/Modules/Frontend/Entities
+        App\Entities: %appDir%/Entities
       #  App\Modules\Admin\Entities: %appDir%/Modules/Admin/Entities
 
 
