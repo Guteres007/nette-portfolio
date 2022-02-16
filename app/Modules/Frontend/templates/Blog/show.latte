@@ -14,7 +14,8 @@
                 {$post->getCreatedAt()}</strong
             >
             <article class="blog-content">
-                {$post->getDescription()|stripHtml}
+                {block|parsedown}{$post->getDescription()}{/block}
+
             </article>
 
             <template>

@@ -27,3 +27,10 @@ di:
 		tags: no
 
 
+
+extensions:
+	parsedown: Contributte\Parsedown\DI\ParsedownExtraExtension
+
+parsedown:
+	# Default name is parsedown
+	helper: parsedown # Name of the helper in Latte

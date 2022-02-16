@@ -9,6 +9,6 @@ class VideoPresenter extends BasePresenter
 
     public function renderIndex()
     {
-        
+
     }
 }

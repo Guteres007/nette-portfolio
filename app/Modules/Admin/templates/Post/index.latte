@@ -20,11 +20,13 @@
             </thead>
             <tbody>
             <tr n:foreach="$posts as $post">
+                {varType App\Entities\Post $post}
                 <th scope="row">{$post->getId()}</th>
                 <td><img class="img-fluid" style="max-width: 100px" src="/{$post->getImageName()}" alt=""></td>
                 <td>{$post->getTitle()}</td>
-                <td>{$post->getDescription()}</td>
+                <td>{$post->getShortDescription()|truncate:20,'...'}</td>
                 <td>{foreach $post->getLabels() as $label}
+                    {varType App\Entities\Label $label}
                         <span style="background: red">{$label->getText()}</span>
                     {/foreach}</td>
                 <td>

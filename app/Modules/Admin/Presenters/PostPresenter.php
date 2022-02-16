@@ -38,17 +38,19 @@ class PostPresenter extends AdminPresenter
         $this->template->posts = $this->entityManager->getRepository(Post::class)->findBy([], ['id' => 'desc']);
     }
 
-    public function renderEdit($id)
+    public function renderEdit($id = null)
     {
         $post = $this->entityManager->getRepository(Post::class)->find($id);
 
         if (!$post) {
             return $this->error('A ja jaj');
         }
+
         $this->getComponent('postForm')
             ->setDefaults([
                 'title' => $post->getTitle(),
-                'description' => $post->getDescription()
+                'description' => $post->getDescription(),
+                'shortDescription' => $post->getShortDescription()
             ]);
     }
 
@@ -74,7 +76,8 @@ class PostPresenter extends AdminPresenter
     public function createComponentPostForm(): Form
     {
         $form = new Form();
-        $form->addText('title')->addRule($form::LENGTH, 'Musí být vyplněné', [1, 30]);;
+        $form->addText('title')->addRule($form::LENGTH, 'Musí být vyplněné', [1, 30]);
+        $form->addText('shortDescription')->setRequired(true);
         $form->addTextArea('description')->setRequired(true);
         $form->addUpload('image');
         $form->addSubmit('send', 'Odeslat');
@@ -102,12 +105,14 @@ class PostPresenter extends AdminPresenter
         if ($form->isSubmitted() && $form->isValid()) {
             $post->setTitle($data->title);
             $post->setDescription($data->description);
-            $post->setSlug($data->title);
+            $post->setShortDescription($data->shortDescription);
+
             $post->setAuthor('Martin Andráši');
             if ($this->getAction() !== 'edit') {
                 $label = new Label();
                 $label->setText('label text' . random_int(1, 2002));
                 $post->addLabel($label);
+                $post->setSlug($data->title);
             }
 
             $this->entityManager->persist($post);

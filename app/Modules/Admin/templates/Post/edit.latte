@@ -1,27 +1,3 @@
 {block content}
-
-    <div class="col-6">
-        <form n:name="postForm"  enctype="multipart/form-data">
-            <div class="mb-3">
-                <label for="" class="form-label">Nadpis</label>
-                <input type="text" n:name="title" class="form-control">
-            </div>
-            <div class="mb-3">
-                <label for="Popis" class="form-label">Description</label>
-                <textarea id="textarea" type="text" n:name="description" class="form-control"></textarea>
-            </div>
-
-            <div class="mb-3">
-                <label for="Popis" class="form-label">Obrázek</label>
-                <input type="file" n:name="image" class="form-control">
-            </div>
-
-            <div class="mb-3">
-                <button n:name="send" class="btn btn-success">Odeslat</button>
-            </div>
-        </form>
-    </div>
-
-
-
+    {include _form.latte}
 {/block}

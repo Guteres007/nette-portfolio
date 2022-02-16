@@ -23,7 +23,7 @@
                     <div class="col-12 col-sm-6">
                         <h2 class="title">{$post->getTitle()}</h2>
                         <p class="description d-none d-lg-block">
-                            {$post->getDescription() |stripHtml}
+                            {$post->getShortDescription()|stripHtml}
                         </p>
                         <p class="date">
                            vytvořeno: {$post->getCreatedAt()}

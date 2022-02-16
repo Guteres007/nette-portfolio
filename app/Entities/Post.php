@@ -29,9 +29,15 @@ class Post
     private string $title;
 
     /**
-     * @ORM\Column(type="string", nullable=false)
+     * @ORM\Column(type="text", nullable=false)
      */
     private string $description;
+
+    /**
+     * @ORM\Column(type="text", nullable=false)
+     */
+    private string $shortDescription;
+
 
     /**
      * @ORM\Column(type="string", nullable=true)
@@ -191,4 +197,21 @@ class Post
     {
         $this->slug = Strings::webalize(time() . $slug);
     }
+
+    /**
+     * @return string
+     */
+    public function getShortDescription(): string
+    {
+        return $this->shortDescription;
+    }
+
+    /**
+     * @param string $shortDescription
+     */
+    public function setShortDescription(string $shortDescription): void
+    {
+        $this->shortDescription = $shortDescription;
+    }
+
 }
