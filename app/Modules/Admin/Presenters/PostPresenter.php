@@ -7,7 +7,7 @@ namespace App\Modules\Admin\Presenters;
 use App\Entities\Label;
 use App\Entities\Post;
 use Nette\Application\UI\Form;
-use Nette\Neon\Neon;
+use Nette\Utils\FileSystem;
 
 
 class PostPresenter extends AdminPresenter
@@ -64,6 +64,7 @@ class PostPresenter extends AdminPresenter
     public function actionDelete($id)
     {
         $post = $this->entityManager->getRepository(Post::class)->find($id);
+        FileSystem::delete($post->getImageName());
         $this->entityManager->remove($post);
         $this->entityManager->flush();
         $this->flashMessage('Smazáno', 'success');
@@ -96,6 +97,17 @@ class PostPresenter extends AdminPresenter
         }
 
         if ($data->image->isOk()) {
+
+            if ($this->getAction() === 'edit') {
+                try {
+                    FileSystem::delete($post->getImageName());
+                } catch (\Exception $exception) {
+                    //TODO: Vlastní logger
+                    echo $exception;
+                }
+            }
+
+
             $image = $data->image;
             $imageName = $this->uploadDir ."/". random_int(999, 99999) . $image->getSanitizedName();
             $image->move($imageName);
