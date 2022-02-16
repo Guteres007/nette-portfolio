@@ -4,6 +4,7 @@
 namespace App\Modules\Frontend\Presenters;
 use App\Entities\Post;
 use Nettrine\ORM\EntityManagerDecorator;
+use Tracy\ILogger;
 
 class BlogPresenter extends BasePresenter
 {
@@ -13,6 +14,11 @@ class BlogPresenter extends BasePresenter
      */
     public $entityManager;
 
+    /**
+     * @inject
+     * @var ILogger
+     */
+    public $logger;
 
     public function renderIndex()
     {
@@ -22,6 +28,11 @@ class BlogPresenter extends BasePresenter
 
     public function renderShow($slug)
     {
-        $this->template->post = $this->entityManager->getRepository(Post::class)->findOneBy(['slug' => $slug]);
+        $post = $this->entityManager->getRepository(Post::class)->findOneBy(['slug' => $slug]);
+        if (!$post) {
+            $this->logger->log($slug . ' nenalezen', 'info');
+            $this->error('Nenalezeno');
+        }
+        $this->template->post = $post;
     }
 }

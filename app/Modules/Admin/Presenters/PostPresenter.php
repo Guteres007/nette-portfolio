@@ -8,10 +8,15 @@ use App\Entities\Label;
 use App\Entities\Post;
 use Nette\Application\UI\Form;
 use Nette\Utils\FileSystem;
-
+use Tracy\ILogger;
 
 class PostPresenter extends AdminPresenter
 {
+    /**
+     * @inject
+     * @var ILogger
+     */
+    public $logger;
     /**
      * @inject
      * @var \Nettrine\ORM\EntityManagerDecorator
@@ -43,7 +48,8 @@ class PostPresenter extends AdminPresenter
         $post = $this->entityManager->getRepository(Post::class)->find($id);
 
         if (!$post) {
-            return $this->error('A ja jaj');
+            $this->logger->log('Nanalezen' . $id, 'error' );
+            return $this->error('Nenalezeno');
         }
 
         $this->getComponent('postForm')

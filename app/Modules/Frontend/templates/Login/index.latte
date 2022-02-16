@@ -1,12 +1,16 @@
+
+
 {block content}
 
-{if !$user->isLoggedIn()}
-    <form n:name="loginForm">
-        <input type="text" n:name="username">
-        <input type="password" n:name="password">
-        <button type="submit">Odeslat</button>
-    </form>
- {/if}
+
+    {include './../_includes/menu.latte'}
+    {if !$user->isLoggedIn()}
+        <form n:name="loginForm">
+            <input type="text" n:name="username">
+            <input type="password" n:name="password">
+            <button type="submit">Odeslat</button>
+        </form>
+     {/if}
 
 
 

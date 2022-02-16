@@ -4,11 +4,7 @@
 namespace App\Modules\Frontend\Presenters;
 
 
-use App\Entities\User;
-
 use App\Modules\Admin\Secure\Auth;
-use Doctrine\ORM\Decorator\EntityManagerDecorator;
-use Nette\Application\UI\Presenter;
 use Nette\Application\UI\Form;
 
 
