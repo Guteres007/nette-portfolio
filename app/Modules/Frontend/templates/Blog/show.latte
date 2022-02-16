@@ -1,14 +1,35 @@
 {layout './postLayout.latte'}
+{varType App\Entities\Post $post}
+
+{block metatags}
+
+    <title>{$post->getTitle()} | Martin Andráši </title>
+
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width,initial-scale=1">
+    <meta name="theme-color" content="#f65d0a">
+    <meta name="author" content="Martin Andráši">
+    <meta property="og:image:width" content="1200">
+    <meta property="og:image:height" content="630">
+    <meta name="description" content="{$post->getShortDescription()}">
+    <meta property="og:title" content="{$post->getTitle()} | Martin Andráši ">
+    <meta property="og:url" content="https://www.andrasi.cz">
+    <meta property="og:description" content="{$post->getShortDescription()}">
+    <meta property="og:image" content="https://www.andrasi.cz/{$post->getImageName()}">
+    <link rel="shortcut icon" href="/img/martin-andrasi-favicon.png">
+    <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
+    <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
+{/block}
 
 {block content}
 
-{varType App\Entities\Post $post}
+
 
 
 
     <div class="row">
         <div class="col-12 col-xl-8 offset-xl-2">
-            <h1> {$post->getTitle()}</h1>
+            <h1>{$post->getTitle()}</h1>
             <strong class="blog__post"
             >Publikováno:
                 {$post->getCreatedAt()}</strong
