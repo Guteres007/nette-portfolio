@@ -119,7 +119,8 @@ h1,h2,h3 {
 .post {
   padding-bottom: 80px;
 }
-.blog .blog__item {
+.blog .blog-border-grey {
+  border: 1px solid #d5d5d5;
   margin-bottom: 30px;
 }
 .blog .blog__item:hover {

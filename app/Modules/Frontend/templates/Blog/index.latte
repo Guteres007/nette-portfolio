@@ -4,8 +4,8 @@
 
 
     <div class="col-12">
-        <ul  class="list-unstyled">
-            <li n:foreach="$posts as $post">
+        <ul class="list-unstyled">
+            <li n:foreach="$posts as $post" class="blog-border-grey">
                 {varType \App\Entities\Post $post}
                 <a
                         href="{link Blog:show $post->getSlug()}"
