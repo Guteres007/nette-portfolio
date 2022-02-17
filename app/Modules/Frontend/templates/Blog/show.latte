@@ -35,7 +35,7 @@
                 {$post->getCreatedAt()}</strong
             >
             <article class="blog-content">
-                {block|parsedown}{$post->getDescription()}{/block}
+                {block|parsedown}{$post->getDescription()|noescape}{/block}
 
             </article>
 

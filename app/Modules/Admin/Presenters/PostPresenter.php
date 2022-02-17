@@ -83,7 +83,7 @@ class PostPresenter extends AdminPresenter
     public function createComponentPostForm(): Form
     {
         $form = new Form();
-        $form->addText('title')->addRule($form::LENGTH, 'Musí být vyplněné', [1, 30]);
+        $form->addText('title')->addRule($form::LENGTH, 'Musí být vyplněné', [1, 255]);
         $form->addText('shortDescription')->setRequired(true);
         $form->addTextArea('description')->setRequired(true);
         $form->addUpload('image');

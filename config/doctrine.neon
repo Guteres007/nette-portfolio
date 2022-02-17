@@ -4,7 +4,7 @@ nettrine.dbal:
         driver: pdo_mysql
         host: '127.0.0.1'
         user: '%db_username%'
-        password:
+        password: %db_password%
         dbname: '%dbname%'
         port: 3306
 

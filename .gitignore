@@ -1,3 +1,5 @@
 www/uploads
 vendor
 node_modules
+config/local.neon
+.idea
