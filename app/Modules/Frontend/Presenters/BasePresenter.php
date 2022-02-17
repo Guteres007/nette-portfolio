@@ -27,7 +27,7 @@ class BasePresenter extends Presenter
     protected function beforeRender()
     {
 
-
+        $this->template->jsVersion = $this->assetCacheCleaner->getFileVersion('css/index.js');
         $this->template->cssVersion = $this->assetCacheCleaner->getFileVersion('css/index.css');
     }
 }

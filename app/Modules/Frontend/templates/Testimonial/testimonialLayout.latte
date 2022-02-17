@@ -36,7 +36,7 @@
 {control menu}
 
 
-{include '_includes/menu.latte'}
+{include './../_includes/menu.latte'}
 <div>
     <div class="container post">
         <div class="row">
@@ -52,9 +52,10 @@
     </div>
 </div>
 
-{include '_includes/footer.latte'}
+{include './../_includes/footer.latte'}
 	{block scripts}
     <script src="https://nette.github.io/resources/js/3/netteForms.min.js"></script>
+    <script src="/js/index.js?v={$jsVersion}"></script>
 {/block}
 </body>
 </html>

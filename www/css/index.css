@@ -6827,3 +6827,10 @@ html {
     margin-right: 0 !important;
   }
 }
+.mobile-menu {
+  display: none;
+}
+
+.mobile-menu.menuOpen {
+  display: block;
+}
