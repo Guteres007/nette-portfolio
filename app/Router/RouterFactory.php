@@ -20,6 +20,9 @@ final class RouterFactory
         $router->addRoute('blog', 'Frontend:Blog:index');
         $router->addRoute('blog/<slug>', 'Frontend:Blog:show');
         $router->addRoute('/video', 'Frontend:Video:index');
+        $router->addRoute('/sluzby', 'Frontend:Service:index');
+        $router->addRoute('/kontakt-a-kalkulace', 'Frontend:Inquiry:index');
+
         $router->withModule('Admin')
             ->addRoute('admin/<presenter>/<action>');
 

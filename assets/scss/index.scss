@@ -117,3 +117,36 @@ html {
 .mobile-menu.menuOpen {
   display: block;
 }
+
+.service {
+
+}
+
+.serviceContainer {
+  padding-bottom: 80px;
+  h1 {
+    margin-top: 30px;
+    color: #00191f;
+    font-size: 47px;
+    font-weight: 600;
+  }
+    .service--bordered {
+      background: #ebfcff;
+      border: 1px solid #c4e1e6;
+      border-radius: 8px;
+      margin-bottom: 20px;
+      padding: 16px;
+      height: 100%;
+      overflow: hidden;
+    }
+    .service h2 {
+      font-size: 1.6rem;
+      font-weight: 700;
+      margin-top: 5px;
+    }
+
+  .service__price {
+    color: #F65D0A;
+    font-style: italic;
+  }
+}

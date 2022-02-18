@@ -15,7 +15,7 @@ class Bootstrap
 		$appDir = dirname(__DIR__);
 		$wwwDir = $appDir . '/www';
         //$configurator->setDebugMode(true);
-		$configurator->setDebugMode('217.170.104.227'); // enable for your remote IP
+		$configurator->setDebugMode(['178.22.113.33','217.170.104.227' ]); // enable for your remote IP
 		$configurator->enableTracy($appDir . '/log');
 
 		$configurator->setTimeZone('Europe/Prague');

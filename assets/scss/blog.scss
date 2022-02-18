@@ -122,6 +122,8 @@ h1,h2,h3 {
 .blog .blog-border-grey {
   border: 1px solid #d5d5d5;
   margin-bottom: 30px;
+  border-radius: 8px;
+  overflow: hidden;
 }
 .blog .blog__item:hover {
   text-decoration: none;
