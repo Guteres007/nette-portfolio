@@ -19,7 +19,15 @@
     <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;600;700&display=swap">
     <link rel="stylesheet" href="https://use.fontawesome.com/releases/v5.7.2/css/all.css">
 
-
+    <script src="https://cdn.jsdelivr.net/npm/save-ukraine@0.18.0/dist/umd/main.js"></script>
+    <script>
+        Ukraine.save({
+            ribbon: 'TOP_LEFT',
+            hasShadow: true,
+            countries: [],
+        });
+    </script>
+    
     {include './_includes/analytics.latte'}
 
     <link rel="stylesheet" href="/css/index.css?v={$cssVersion}">
